@@ -1,0 +1,14 @@
+# Ignore Mac system files
+.DS_store
+
+# Ignore all text files
+*.txt
+
+# Ignore jupyter notebooks
+/notebooks/*
+
+# Ignore files related to API keys
+.env
+
+# ignore .vscode files
+/.vscode
