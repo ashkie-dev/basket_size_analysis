@@ -83,3 +83,11 @@ def cleaner(x):
         vals = vals.strip()
     x = vals
     return x
+
+
+def skus(x, vals):
+    matches = []
+    for i in x:
+        if vals.get(i) is not None:
+            matches.append(vals[i])
+    return matches
