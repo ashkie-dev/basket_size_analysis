@@ -24,8 +24,10 @@ def analyze(*args, **kwargs):
     def format_data(*args):
         df = (args[0].groupby([args[1], args[2]])[args[3]].sum(
         ).unstack().reset_index().fillna(0).set_index(args[1]))
+
         df_enc = df.parallel_applymap(encodeUnits)
         df_enc_plus = df_enc[(df_enc > 0).sum(axis=1) >= 2]
+
         return df_enc_plus
 
     def apply_apriori(df, **kwargs):
@@ -40,14 +42,20 @@ def analyze(*args, **kwargs):
         Returns:
             pd.DataFrame: DataFrame with antecedent and consequents
         """
+
         bk = apriori(df, min_support=kwargs.get('min_support', .002), use_colnames=True).sort_values(
             'support', ascending=False).reset_index(drop=True)
+
+        # applying association rules with minimum threshold of 1
         assoc = association_rules(bk, metric='lift', min_threshold=1).sort_values(
             by='lift', ascending=False).reset_index(drop=True)
+
         assoc[['antecedents', 'consequents']] = assoc[[
             'antecedents', 'consequents']].applymap(lambda x: ', '.join(x))
+
         return assoc
 
     basket = format_data(*args)
     bk_df = apply_apriori(basket)
+
     return bk_df

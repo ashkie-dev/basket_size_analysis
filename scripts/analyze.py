@@ -1,4 +1,4 @@
-## main
+# main
 from mlxtend.frequent_patterns import apriori, association_rules
 import regex as re
 import pandas as pd
@@ -49,7 +49,7 @@ def analyze(*args, **kwargs):
 
         return df_enc_plus
 
-#--------------old format_data function--------------
+# --------------old format_data function--------------
     # def format_data(*args):
     #     df = (args[0].groupby([args[1], args[2]])[args[3]].sum(
     #     ).unstack().reset_index().fillna(0).set_index(args[1]))
