@@ -1,3 +1,5 @@
 {
-    "editor.defaultFormatter": "VisualStudioExptTeam.vscodeintellicode"
+    "editor.defaultFormatter": "VisualStudioExptTeam.vscodeintellicode",
+    "explorer.fileNesting.enabled": true,
+    "workbench.tree.indent": 18
 }

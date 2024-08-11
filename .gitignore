@@ -5,10 +5,12 @@
 *.txt
 
 # Ignore jupyter notebooks
-/notebooks/*
+notebooks
+notebooks/*
 
 # Ignore files related to API keys
 .env
 
 # ignore .vscode files
-/.vscode
+.vscode
+.vscode/settings.json
