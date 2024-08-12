@@ -2,12 +2,13 @@ import streamlit as st
 import pandas as pd
 import numpy as np
 from PIL import Image
-from funcs import *
+from app_helpers import *
 from analyze import analyze, format_dtypes
 
 # page confg
 st.set_page_config(page_title='Market Basket Analysis', layout='wide')
-# image = Image.open('static/eps_logo.jpg')
+# TODO add image to static
+# image = Image.open('static/{file}.jpg')
 # st.image(image, width=150)
 # page title
 st.title('Market Basket Analysis')
@@ -18,10 +19,12 @@ if 'min_support' not in st.session_state:
 if 'df' not in st.session_state:
     st.session_state.df = pd.DataFrame()
 
+
 def run_process(*args):
     with st.spinner('Please wait while we do maths...'):
         st.session_state.df = analyze(args[0], args[1])
     return st.session_state.df
+
 
 file_import = st.file_uploader(label='Import File')
 # if file_import is not None:
