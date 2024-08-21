@@ -1,2 +1,3 @@
-# Market Basket Analysis
-Useful to find a correlation between products sold and the likelihood a particular product would also be purchased. Similar to "customers frequently purchase together"
+# Market Basket Analysis -- Association Rules & Frequent Pattern Algorithms
+
+Identify frequent pattern itemsets using the Apriori algorithm and association rules to identify the likelihood a particular product will be purchased alongside another.
