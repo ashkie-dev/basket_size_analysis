@@ -6,7 +6,8 @@ from ftfy import fix_text
 from io import BytesIO
 import xlsxwriter
 from pyxlsb import open_workbook as open_xlsb
-
+from pathlib import Path
+from glob import glob
 
 def group_sum(*args, **kwargs):
     """
@@ -70,3 +71,12 @@ def sku_mapping(x, vals):
             matches.append(vals[i])
 
     return matches
+
+# TODO finish
+def load_data(filepath: str, extension: str = '.xlsx'):
+    in_type = Path(filepath)
+    match in_type:
+        case in_type.is_file():
+            pass
+
+    container = glob(filepath)
