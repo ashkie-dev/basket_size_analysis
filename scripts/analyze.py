@@ -1,4 +1,4 @@
-# main
+# ! Old main
 from mlxtend.frequent_patterns import apriori, association_rules
 import regex as re
 import pandas as pd

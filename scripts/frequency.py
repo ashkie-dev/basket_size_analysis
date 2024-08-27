@@ -1,5 +1,3 @@
-
-
 from mlxtend.frequent_patterns import apriori, association_rules
 import regex as re
 import pandas as pd
@@ -7,6 +5,9 @@ import numpy as np
 from pandarallel import pandarallel
 pandarallel.initialize(progress_bar=False, verbose=1)
 from pathlib import Path
+
+
+# ! look into splitting class Frequency into a helpers file
 
 class Frequency:
 
