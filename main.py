@@ -6,7 +6,7 @@ parser = argparse.ArgumentParser(
     description='Create a report detailing which products a customer is most likely to purchase together')
 parser.add_argument('-f', '--file', type=str, help='')
 parser.add_argument('-s', '--string', type=str)
-parser.add_argument('-m', '-multiple', type=str, nargs='+')
+parser.add_argument('-m', '-multi', type=str, nargs='+')
 
 args = parser.parse_args()
 
